@@ -1,0 +1,72 @@
+﻿@page
+@model LoadPage.Pages.Test.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@*<style type="text/css">
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            z-index: 99;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        .loading {
+            font-family: Arial;
+            font-size: 10pt;
+            border: 5px solid #67CFF5;
+            width: 200px;
+            height: 100px;
+            display: none;
+            position: fixed;
+            background-color: White;
+            z-index: 999;
+        }
+    </style>*@
+@*<div class="loading" align="center">
+        Loading. Please wait.<br />
+        <br />
+        <img src="~/images/loader.gif" alt="" />
+    </div>
+    <script type="text/javascript">
+            var modal, loading;
+            function ShowProgress() {
+                modal = document.createElement("DIV");
+                modal.className = "modal";
+                document.body.appendChild(modal);
+                loading = document.getElementsByClassName("loading")[0];
+                loading.style.display = "block";
+                var top = Math.max(window.innerHeight / 2 - loading.offsetHeight / 2, 0);
+                var left = Math.max(window.innerWidth / 2 - loading.offsetWidth / 2, 0);
+                loading.style.top = top + "px";
+                loading.style.left = left + "px";
+            };
+
+    </script>*@
+
+<partial name="_Loading"/>
+
+
+<form method="post">
+    <div class="form-group">
+        <button type="submit" class="btn-default" onclick="ShowProgress();">Save <img src="~/images/save1.png"></button>
+    </div>
+</form>
+
+@*<script type="text/javascript">
+            window.onload = function () {
+                setTimeout(function () {
+                    document.body.removeChild(modal);
+                    loading.style.display = "none";
+                }, 0);
+            };
+    </script>*@
